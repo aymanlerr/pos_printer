@@ -1,4 +1,4 @@
-import 'package:pos_printer/order_item.dart';
+import 'package:pos_printer/printer_form/order_item.dart';
 
 class Order {
   String orgName;

@@ -9,22 +9,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:pos_printer/main.dart';
+import 'package:pos_printer/utils/global_enum.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  test('Return list of order type from order type enum', () {
+    List<String> getOrderTypes() {
+      String _enumToString (OrderType orderType) {
+        // Convert the enum value to a string
+        String enumString = orderType.toString();
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+        // Extract the enum name after the dot
+        String name = enumString.split('.').last;
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+        // Convert camel case to human-readable format
+        // Split by uppercase letters and join with hyphens
+        RegExp regExp = RegExp('([a-z])([A-Z])');
+        String formatted = name.replaceAllMapped(regExp, (match) {
+          return '${match.group(1)}-${match.group(2)}';
+        });
+
+        // Capitalize the first letter of each word
+        formatted = formatted.split('-').map((word) {
+          return '${word[0].toUpperCase()}${word.substring(1).toLowerCase()}';
+        }).join('-');
+
+        return formatted;
+      }
+      return OrderType.values.map((orderType) => _enumToString(orderType)).toList();
+    }
+
+    print(getOrderTypes());
   });
 }
