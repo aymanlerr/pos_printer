@@ -38,7 +38,7 @@ dependencies:
   esc_pos_utils: ^1.1.0
   esc_pos_bluetooth: ^0.4.1
   permission_handler: ^10.2.0
-  intl:
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
