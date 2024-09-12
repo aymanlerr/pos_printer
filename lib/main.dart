@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pos_printer/scan_bluetooth/scan_bluetooth.dart';
+import 'package:pos_printer/views/select_print_mode_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ScanBluetoothPage(title: 'POS Printer'),
+      home: const SelectPrintModePage(),
     );
   }
 }
