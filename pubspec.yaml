@@ -35,10 +35,14 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  esc_pos_utils: ^1.1.0
-  esc_pos_bluetooth: ^0.4.1
+  esc_pos_utils_plus: ^2.0.4
+  print_bluetooth_thermal: ^1.1.1
+#  esc_pos_utils: ^1.1.0
+#  esc_pos_bluetooth: ^0.4.1
+  usb_serial: ^0.5.2
   permission_handler: ^10.2.0
   intl: ^0.19.0
+  fluttertoast: ^8.2.8
 
 dev_dependencies:
   flutter_test:
